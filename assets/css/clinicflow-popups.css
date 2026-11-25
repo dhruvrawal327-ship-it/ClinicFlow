@@ -1,0 +1,145 @@
+
+/* =====================================
+   CLINICFLOW CUSTOM CONFIRMATION MODAL
+===================================== */
+
+.cf-modal {
+    position: fixed !important;
+    inset: 0 !important;
+    z-index: 999999 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 20px !important;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.2s ease, visibility 0.2s ease;
+}
+
+.cf-modal.show {
+    visibility: visible;
+    opacity: 1;
+}
+
+.cf-modal-backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(3, 10, 22, 0.82);
+    backdrop-filter: blur(6px);
+}
+
+.cf-modal-dialog {
+    position: relative;
+    width: 100%;
+    max-width: 430px;
+    padding: 30px;
+    background: #17263B !important;
+    border: 1px solid #30445E;
+    border-radius: 18px;
+    box-shadow: 0 25px 70px rgba(0, 0, 0, 0.55);
+    transform: translateY(15px) scale(0.97);
+    transition: transform 0.2s ease;
+}
+
+.cf-modal.show .cf-modal-dialog {
+    transform: translateY(0) scale(1);
+}
+
+.cf-modal-icon {
+    width: 55px;
+    height: 55px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 18px;
+    border-radius: 15px;
+    font-size: 25px;
+}
+
+.cf-modal-icon--danger {
+    background: rgba(241, 107, 117, 0.15);
+    color: #F16B75;
+}
+
+.cf-modal-icon--success {
+    background: rgba(34, 197, 139, 0.15);
+    color: #22C58B;
+}
+
+.cf-modal-content h5 {
+    color: #F0F5FA !important;
+    font-size: 19px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.cf-modal-content p {
+    color: #AAB9CC !important;
+    font-size: 14px;
+    line-height: 1.7;
+    margin-bottom: 25px;
+}
+
+.cf-modal-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+.cf-modal-actions button {
+    min-width: 110px;
+    padding: 10px 17px;
+    border-radius: 9px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.cf-modal-cancel {
+    background: #293B52;
+    color: #F0F5FA;
+    border: 1px solid #40536A;
+}
+
+.cf-modal-cancel:hover {
+    background: #3A506B;
+}
+
+.cf-modal-confirm {
+    color: #FFFFFF;
+    border: 1px solid transparent;
+}
+
+.cf-modal-confirm--danger {
+    background: #C83F50;
+    border-color: #C83F50;
+}
+
+.cf-modal-confirm--danger:hover {
+    background: #E05260;
+}
+
+.cf-modal-confirm--success {
+    background: #087E8B;
+    border-color: #087E8B;
+}
+
+.cf-modal-confirm--success:hover {
+    background: #0996A3;
+}
+
+.cf-modal-open {
+    overflow: hidden;
+}
+
+@media (max-width: 480px) {
+    .cf-modal-dialog {
+        padding: 23px;
+    }
+
+    .cf-modal-actions button {
+        flex: 1;
+        min-width: 0;
+    }
+}
